@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <form action="" class="myform">
+            <input type="text" class="binary">
+            <button> Convert</button>
+            <h1 class="output"></h1>
+        </form>
+
+        <h1 class="output"></h1>
+
+    </body>
+    <script>
+
+        const form = document.querySelector('.myform')
+        form.addEventListener ('submit',function (e){
+            e.preventDefault();
+            binary = form.querySelector('.binary').value
+            output = document.querySelector('.output')
+            length = binary.length
+            let result = 0
+            
+            for (let i = 0; i <=length - 1 ; i++){
+                rem = binary % 10
+                console.log(rem)
+                binary = Math.round (binary / 10)
+                temp = rem * (2 ** i)
+                result += temp
+                
+            }
+            output.textContent = result
+        })
+
+        
+
+    </script>
+</html>
